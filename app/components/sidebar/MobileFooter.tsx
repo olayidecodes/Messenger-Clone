@@ -8,7 +8,7 @@ const MobileFooter = () => {
     const { isOpen } = useConversation()
 
     if (isOpen) {
-        return null
+      return null
     }
   return (
     <div className="

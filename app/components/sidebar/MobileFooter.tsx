@@ -2,6 +2,7 @@
 
 import useConversation from "@/app/hooks/useConversation"
 import useRoutes from "@/app/hooks/useRoutes"
+import MobileItem from "./MobileItem"
 
 const MobileFooter = () => {
     const routes = useRoutes()
@@ -24,12 +25,12 @@ const MobileFooter = () => {
     lg:hidden
     ">
       {routes.map((route) => (
-        <MobileFooter 
-            key={route.href}
-            href={route.href}
-            active={route.active}
-            icon={route.icon}
-            onClick={route.onClick}
+        <MobileItem
+          key={route.href}
+          href={route.href}
+          active={route.active}
+          icon={route.icon}
+          onClick={route.onClick}
         />
       ))}
     </div>

@@ -47,11 +47,11 @@ export async function POST(
       });
 
        // Update all connections with new conversation
-    //   newConversation.users.forEach((user) => {
-    //     if (user.email) {
-    //       pusherServer.trigger(user.email, 'conversation:new', newConversation);
-    //     }
-    //   });
+      newConversation.users.forEach((user) => {
+        if (user.email) {
+          pusherServer.trigger(user.email, 'conversation:new', newConversation);
+        }
+      });
 
       return NextResponse.json(newConversation);
     }
@@ -98,11 +98,11 @@ export async function POST(
     });
 
     // Update all connections with new conversation
-    // newConversation.users.map((user) => {
-    //   if (user.email) {
-    //     pusherServer.trigger(user.email, 'conversation:new', newConversation);
-    //   }
-    // });
+    newConversation.users.map((user) => {
+      if (user.email) {
+        pusherServer.trigger(user.email, 'conversation:new', newConversation);
+      }
+    });
 
     return NextResponse.json(newConversation)
   } catch (error) {
